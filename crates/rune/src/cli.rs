@@ -739,12 +739,27 @@ async fn main_with_out(io: &mut Io<'_>, entry: &mut Entry<'_>, mut args: Args) -
         base.propagate(&mut c, shared);
     }
 
+    let default_command = Command::LanguageServer(SharedFlags {
+        bench: None,
+        bin: None,
+        compiler_options: Vec::new(),
+        example: None,
+        experimental: true,
+        paths: Vec::new(),
+        recursive: false,
+        test: None,
+        verbose: true,
+        warnings: true,
+        workspace: false,
+    });
+
     let cmd = match &args.cmd {
         Some(cmd) => cmd,
         None => {
-            let commands: alloc::String = Command::ALL.into_iter().try_join(", ")?;
-            writeln!(io.stdout, "Expected a subcommand: {commands}")?;
-            return Ok(ExitCode::Failure);
+            &default_command
+            // let commands: alloc::String = Command::ALL.into_iter().try_join(", ")?;
+            // writeln!(io.stdout, "Expected a subcommand: {commands}")?;
+            // return Ok(ExitCode::Failure);
         }
     };
 
