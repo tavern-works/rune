@@ -122,6 +122,7 @@ modules! {
     {http, "http"},
     {io, "io"},
     {json, "json"},
+    {log, "log"},
     {macros, "macros"},
     {process, "process"},
     {rand, "rand"},
