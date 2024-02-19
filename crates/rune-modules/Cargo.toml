@@ -40,6 +40,7 @@ core = []
 io = []
 fmt = []
 macros = []
+log = ["dep:log"]
 
 [dependencies]
 base64 = { version = "0.22.1", optional = true }
@@ -52,6 +53,7 @@ tokio = { version = "1.28.1", optional = true }
 serde_json = { version = "1.0.96", optional = true }
 toml = { version = "0.7.3", optional = true }
 nanorand = { version = "0.7.0", optional = true, features = ["getrandom"] }
+log = { version = "0.4.20", optional = true }
 
 rune = { version = "0.14.0", path = "../rune" }
 
