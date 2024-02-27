@@ -302,7 +302,7 @@ impl TryClone for rust_alloc::string::String {
     }
 }
 
-#[cfg(all(test, feature = "alloc"))]
+#[cfg(feature = "alloc")]
 impl<T> TryClone for rust_alloc::vec::Vec<T>
 where
     T: TryClone,
