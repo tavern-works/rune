@@ -116,6 +116,9 @@ pub mod http;
 #[cfg(feature = "json")]
 pub mod json;
 
+#[cfg(feature = "log")]
+pub mod log;
+
 #[cfg(feature = "process")]
 pub mod process;
 
@@ -136,6 +139,7 @@ entry! {
     {fs, "fs"},
     {http, "http"},
     {json, "json"},
+    {log, "log"},
     {process, "process"},
     {rand, "rand"},
     {signal, "signal"},
